@@ -6,31 +6,35 @@ import 'package:notes_app/features/notes/data/repositories/hive_repository_impl.
 import 'package:notes_app/features/notes/domain/repositories/notes_repository.dart';
 import 'package:notes_app/features/notes/domain/usecases/add_note.dart';
 import 'package:notes_app/features/notes/domain/usecases/delete_note.dart';
+import 'package:notes_app/features/notes/domain/usecases/get_notes.dart';
 import 'package:notes_app/features/notes/presentation/cubit/notes_cubit.dart';
 
-final GetIt getIt = GetIt.instance;
+class DI {
+  static final GetIt getIt = GetIt.instance;
 
-Future<void> init() async {
-  // Bloc
-  getIt.registerFactory<NotesCubit>(
-    () => NotesCubit(
-        addNote: getIt(), deleteNote: getIt(), hiveNotesBox: getIt()),
-  );
-  // Data sources
-  getIt.registerLazySingleton<Datasource>(
-    () => HiveDatasourceImpl(notesBox: getIt()),
-  );
+  Future<void> init() async {
+    // Bloc
+    getIt.registerFactory<NotesCubit>(
+      () =>
+          NotesCubit(addNote: getIt(), deleteNote: getIt(), getNotes: getIt()),
+    );
+    // Data sources
+    getIt.registerLazySingleton<Datasource>(
+      () => HiveDatasourceImpl(notesBox: getIt()),
+    );
 
-  // Repository
-  getIt.registerLazySingleton<NotesRepository>(
-    () => NotesRepositoryImpl(hiveDatasource: getIt()),
-  );
+    // Repository
+    getIt.registerLazySingleton<NotesRepository>(
+      () => NotesRepositoryImpl(hiveDatasource: getIt()),
+    );
 
-  // Use cases
-  getIt.registerLazySingleton<AddNote>(() => AddNote(getIt()));
-  getIt.registerLazySingleton<DeleteNote>(() => DeleteNote(getIt()));
+    // Use cases
+    getIt.registerLazySingleton<AddNote>(() => AddNote(getIt()));
+    getIt.registerLazySingleton<DeleteNote>(() => DeleteNote(getIt()));
+    getIt.registerLazySingleton<GetNotes>(() => GetNotes(getIt()));
 
-  // External
-  final Box<HiveNote> hiveNotesBox = await Hive.openBox<HiveNote>('notes');
-  getIt.registerLazySingleton<Box<HiveNote>>(() => hiveNotesBox);
+    // External
+    final Box<HiveNote> hiveNotesBox = await Hive.openBox<HiveNote>('notes');
+    getIt.registerLazySingleton<Box<HiveNote>>(() => hiveNotesBox);
+  }
 }

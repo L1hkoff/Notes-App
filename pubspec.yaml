@@ -17,43 +17,43 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   
-  intl: ^0.17.0
-
-  # Service Locator
-  get_it: ^7.2.0
-  
-  # Database
-  hive: ^2.0.4
-  hive_flutter: ^1.1.0
-
   # BLoC
   bloc: ^7.2.1
   flutter_bloc: ^7.3.1
+
+  # Icons
+  cupertino_icons: ^1.0.2
+
+  # Functional programming
+  dartz: ^0.10.0
+
+  # Value equality
+  equatable: ^2.0.3
 
   # Code gen
   freezed: ^0.15.0+1
   freezed_annotation: ^0.15.0
 
+  # Service Locator
+  get_it: ^7.2.0
+
+  # Database
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+
+  intl: ^0.17.0
+  
   # Widgets
   swipeable_tile: ^0.0.2
 
-  # Value equality
-  equatable: ^2.0.3
-
-  # Functional programming
-  dartz: ^0.10.0
-
-  # Icons
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   build_runner: ^2.1.4
-  hive_generator: ^1.1.1
-
   flutter_lints: ^1.0.0
+  hive_generator: ^1.1.1
 
 flutter:
   uses-material-design: true

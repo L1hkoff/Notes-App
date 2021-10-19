@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/features/notes/data/models/note_model.dart';
+import 'package:notes_app/features/notes/domain/entities/note.dart';
 import 'package:notes_app/features/notes/presentation/widgets/note_tile_widget.dart';
 
 class NotesListWidget extends StatelessWidget {
@@ -11,8 +11,8 @@ class NotesListWidget extends StatelessWidget {
   }) : super(key: key);
 
   final bool isFilling;
-  final List<NoteModel> notes;
-  final Future<void> Function({required NoteModel note}) onDeleteAction;
+  final List<Note> notes;
+  final Future<void> Function({required Note note}) onDeleteAction;
 
   @override
   Widget build(BuildContext context) {

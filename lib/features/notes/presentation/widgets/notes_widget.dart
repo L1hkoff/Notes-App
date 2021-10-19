@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/features/notes/data/models/note_model.dart';
+import 'package:notes_app/features/notes/domain/entities/note.dart';
 import 'package:notes_app/features/notes/presentation/widgets/add_note_widget.dart';
 import 'package:notes_app/features/notes/presentation/widgets/notes_list_widget.dart';
 
@@ -16,12 +16,12 @@ class NotesWidget extends StatelessWidget {
   }) : super(key: key);
 
   final bool isFilling;
-  final List<NoteModel> notes;
+  final List<Note> notes;
   final AsyncCallback onStartFilling;
   final AsyncCallback onCancelButtonPressed;
   final Future<void> Function({required String text, required String title})
       onAddButtonPressed;
-  final Future<void> Function({required NoteModel note}) onDeleteAction;
+  final Future<void> Function({required Note note}) onDeleteAction;
 
   @override
   Widget build(BuildContext context) {

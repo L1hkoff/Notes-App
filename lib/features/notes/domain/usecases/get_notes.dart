@@ -4,13 +4,13 @@ import 'package:notes_app/core/usecases/usecase.dart';
 import 'package:notes_app/features/notes/domain/entities/note.dart';
 import 'package:notes_app/features/notes/domain/repositories/notes_repository.dart';
 
-class DeleteNote implements UseCase<bool, Note> {
-  DeleteNote(this.notesRepository);
+class GetNotes implements UseCase<List<Note>, NoParams> {
+  GetNotes(this.notesRepository);
 
   final NotesRepository notesRepository;
 
   @override
-  Future<Either<Failure, bool>> call(Note note) async {
-    return await notesRepository.deleteNote(note);
+  Future<Either<Failure, List<Note>>> call(NoParams noParams) async {
+    return await notesRepository.getNotes();
   }
 }

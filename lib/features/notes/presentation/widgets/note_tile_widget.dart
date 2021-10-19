@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:notes_app/core/extensions/extensions.dart';
 import 'package:notes_app/core/localization/localization.dart';
-import 'package:notes_app/features/notes/data/models/note_model.dart';
+import 'package:notes_app/features/notes/domain/entities/note.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
 class NoteTileWidget extends StatelessWidget {
@@ -10,8 +10,8 @@ class NoteTileWidget extends StatelessWidget {
       {Key? key, required this.note, required this.onDeleteAction})
       : super(key: key);
 
-  final NoteModel note;
-  final Future<void> Function({required NoteModel note}) onDeleteAction;
+  final Note note;
+  final Future<void> Function({required Note note}) onDeleteAction;
 
   @override
   Widget build(BuildContext context) {

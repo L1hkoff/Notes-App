@@ -21,13 +21,13 @@ class _$NotesStateTearOff {
     return const Loading();
   }
 
-  Initial initial(List<NoteModel> notes) {
+  Initial initial(List<Note> notes) {
     return Initial(
       notes,
     );
   }
 
-  Filling filling(List<NoteModel> notes) {
+  Filling filling(List<Note> notes) {
     return Filling(
       notes,
     );
@@ -48,24 +48,24 @@ mixin _$NotesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<NoteModel> notes) initial,
-    required TResult Function(List<NoteModel> notes) filling,
+    required TResult Function(List<Note> notes) initial,
+    required TResult Function(List<Note> notes) filling,
     required TResult Function(Failure failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) =>
@@ -152,8 +152,8 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<NoteModel> notes) initial,
-    required TResult Function(List<NoteModel> notes) filling,
+    required TResult Function(List<Note> notes) initial,
+    required TResult Function(List<Note> notes) filling,
     required TResult Function(Failure failure) error,
   }) {
     return loading();
@@ -163,8 +163,8 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
   }) {
     return loading?.call();
@@ -174,8 +174,8 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -231,7 +231,7 @@ abstract class Loading implements NotesState {
 abstract class $InitialCopyWith<$Res> {
   factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
       _$InitialCopyWithImpl<$Res>;
-  $Res call({List<NoteModel> notes});
+  $Res call({List<Note> notes});
 }
 
 /// @nodoc
@@ -251,7 +251,7 @@ class _$InitialCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
       notes == freezed
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as List<NoteModel>,
+              as List<Note>,
     ));
   }
 }
@@ -262,7 +262,7 @@ class _$Initial implements Initial {
   const _$Initial(this.notes);
 
   @override
-  final List<NoteModel> notes;
+  final List<Note> notes;
 
   @override
   String toString() {
@@ -290,8 +290,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<NoteModel> notes) initial,
-    required TResult Function(List<NoteModel> notes) filling,
+    required TResult Function(List<Note> notes) initial,
+    required TResult Function(List<Note> notes) filling,
     required TResult Function(Failure failure) error,
   }) {
     return initial(notes);
@@ -301,8 +301,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
   }) {
     return initial?.call(notes);
@@ -312,8 +312,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -362,9 +362,9 @@ class _$Initial implements Initial {
 }
 
 abstract class Initial implements NotesState {
-  const factory Initial(List<NoteModel> notes) = _$Initial;
+  const factory Initial(List<Note> notes) = _$Initial;
 
-  List<NoteModel> get notes;
+  List<Note> get notes;
   @JsonKey(ignore: true)
   $InitialCopyWith<Initial> get copyWith => throw _privateConstructorUsedError;
 }
@@ -373,7 +373,7 @@ abstract class Initial implements NotesState {
 abstract class $FillingCopyWith<$Res> {
   factory $FillingCopyWith(Filling value, $Res Function(Filling) then) =
       _$FillingCopyWithImpl<$Res>;
-  $Res call({List<NoteModel> notes});
+  $Res call({List<Note> notes});
 }
 
 /// @nodoc
@@ -393,7 +393,7 @@ class _$FillingCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
       notes == freezed
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as List<NoteModel>,
+              as List<Note>,
     ));
   }
 }
@@ -404,7 +404,7 @@ class _$Filling implements Filling {
   const _$Filling(this.notes);
 
   @override
-  final List<NoteModel> notes;
+  final List<Note> notes;
 
   @override
   String toString() {
@@ -432,8 +432,8 @@ class _$Filling implements Filling {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<NoteModel> notes) initial,
-    required TResult Function(List<NoteModel> notes) filling,
+    required TResult Function(List<Note> notes) initial,
+    required TResult Function(List<Note> notes) filling,
     required TResult Function(Failure failure) error,
   }) {
     return filling(notes);
@@ -443,8 +443,8 @@ class _$Filling implements Filling {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
   }) {
     return filling?.call(notes);
@@ -454,8 +454,8 @@ class _$Filling implements Filling {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -504,9 +504,9 @@ class _$Filling implements Filling {
 }
 
 abstract class Filling implements NotesState {
-  const factory Filling(List<NoteModel> notes) = _$Filling;
+  const factory Filling(List<Note> notes) = _$Filling;
 
-  List<NoteModel> get notes;
+  List<Note> get notes;
   @JsonKey(ignore: true)
   $FillingCopyWith<Filling> get copyWith => throw _privateConstructorUsedError;
 }
@@ -573,8 +573,8 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<NoteModel> notes) initial,
-    required TResult Function(List<NoteModel> notes) filling,
+    required TResult Function(List<Note> notes) initial,
+    required TResult Function(List<Note> notes) filling,
     required TResult Function(Failure failure) error,
   }) {
     return error(failure);
@@ -584,8 +584,8 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
   }) {
     return error?.call(failure);
@@ -595,8 +595,8 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<NoteModel> notes)? initial,
-    TResult Function(List<NoteModel> notes)? filling,
+    TResult Function(List<Note> notes)? initial,
+    TResult Function(List<Note> notes)? filling,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {

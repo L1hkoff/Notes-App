@@ -9,5 +9,5 @@ class Failure extends Equatable {
   String toString() => message;
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [message];
 }

@@ -7,13 +7,13 @@ import 'package:notes_app/features/notes/presentation/pages/notes_page.dart';
 import 'core/localization/locale_base.dart';
 import 'features/notes/data/datasources/hive_adapters.dart';
 
-import 'core/di/injection_container.dart' as di;
+import 'core/di/injection_container.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   registerHiveAdapters();
-  await di.init();
+  await DI().init();
   runApp(const NoteApp());
 }
 
